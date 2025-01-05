@@ -29,5 +29,5 @@ async def group_class(bot, event):
         # 如果已经有记录，直接使用当天的群阶级
         chosen_class = user_group_class[(uid, today)]
     
-    # 返回用户当天的群阶级，同时 @ 对应用户
-    await bot.send(event, f"@{uid} 你今天的群阶级是：{chosen_class}", at_sender=True)
+    # 返回用户当天的群阶级，并通过 at_sender=True 自动 @ 用户
+    await bot.send(event, f"你今天的群阶级是：{chosen_class}", at_sender=True)
